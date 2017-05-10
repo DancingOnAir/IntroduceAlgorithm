@@ -3,6 +3,24 @@
 
 using namespace std;
 
+//insert sort
+void insertSort(int* p, int size)
+{
+	if (p == NULL)
+		return;
+
+	for (int i = 1; i < size; ++i)
+	{
+		int target = p[i];
+
+		for (int j = 0; j < i; ++j)
+		{
+			if (target < p[j])
+				swap(p[i], p[j]);
+		}
+	}
+}
+
 //bubble sort
 void bubbleSort(int* p, int size)
 {
@@ -85,7 +103,8 @@ int main(void)
 	int size = sizeof(a) / sizeof(int);
 
 	//quickSort(a, size);
-	bubbleSort(a, size);
+	//bubbleSort(a, size);
+	insertSort(a, size);
 
 	for (int i = 0; i < size; ++i)
 	{
