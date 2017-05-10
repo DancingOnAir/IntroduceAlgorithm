@@ -3,6 +3,23 @@
 
 using namespace std;
 
+//bubble sort
+void bubbleSort(int* p, int size)
+{
+	if (p == NULL)
+		return;
+
+	for (int i = 0; i < size; ++i)
+	{
+		for (int j = i + 1; j < size; ++j)
+		{
+			if (p[i] > p[j])
+				swap(p[i], p[j]);
+		}
+	}
+}
+
+//quick sort
 int partition(int* p, int start, int end)
 {
 	//int left = start;
@@ -67,7 +84,8 @@ int main(void)
 	int a[] = {6, 3, 2, 7, 8, 4, 9, 5, 1, 10};
 	int size = sizeof(a) / sizeof(int);
 
-	quickSort(a, size);
+	//quickSort(a, size);
+	bubbleSort(a, size);
 
 	for (int i = 0; i < size; ++i)
 	{
